@@ -13,7 +13,7 @@ def open_img():
 
 
 def is_valid():
-    if name.get() != '' and email.get() != '' and dob.get() != '' and address.get() != '' and \
+    if img_path.get() != '' and name.get() != '' and email.get() != '' and dob.get() != '' and address.get() != '' and \
             qualification.get() != '':
         return True
     else:
@@ -62,7 +62,6 @@ def create_doc():
         para = cell[2].paragraphs[0]
         run = para.add_run()
         run.add_picture(img_path.get(), width=Inches(2), height=Inches(2))
-        # document.add_picture(img_path.get(), width=Inches(2), height=Inches(2))
         for r in info_table.rows:
             r.height = Inches(.7)
         document.save(f'{name.get()}.docx')
